@@ -1,0 +1,52 @@
+:root {
+  /* Font */
+  --ff-main: "Poppins", sans-serif;
+
+  /* Colors */
+  --clr-dark: #0e1c27;
+  --clr-light: #f5fafd;
+  --clr-primary: #348ad1;
+  --clr-secondary: #af98ce;
+  --clr-accent: #f2c1b0;
+
+  /* Box Shadow */
+  --bs: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+body {
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+  font-family: var(--ff-main);
+}
+
+main {
+  border: 1px green solid;
+  max-width: 500px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.city-input {
+    border: 0.5px solid var(--clr-accent);
+    height: 45px;
+    min-width: 400px;
+}
+
+/* Weather Card */
+
+.card-container {
+  border: 1px yellow solid;
+  box-shadow: var(--bs);
+  margin: 25px auto;
+  max-width: 400px;
+}
+
+.card-img {
+  border: 1px red solid;
+}
+
+.card-details {
+  text-transform: uppercase;
+  color: var(--clr-secondary);
+  border: 1px purple solid;
+}
