@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <!-- CSS File -->
@@ -16,29 +16,46 @@
   </head>
   <body>
     <main>
-      <h1>The Slightly Accurate Forecast</h1>
-
-      <form class="change-location">
-        <label for="city">Explore the weather in</label>
-        <br />
-        <input id="city" type="text" name="city" class="form-input" />
-      </form>
-      <div class="card-container">
-        <div class="card">
-          <!-- Night or Day Image
-          -->
-          <img src="https://placehold.co/400x300" alt="" />
-          <div class="icon">
-            <!-- icon -->
+      <div class="container flex-group">
+        <!-- Results Container  -->
+        <div class="results-container">
+          <div>
+            <!-- Night or Day Image -->
+            <!-- <picture class="weather-img"> -->
+            <img class="time" src="https://placehold.co/400x300" alt="" />
+            <div class="icon">
+              <img src="" alt="" />
+            </div>
+            <!-- </picture> -->
+          </div>
+          <!-- Weather Details -->
+          <div class="card-details">
+            <h3>City Name</h3>
+            <div class="sub-title">Weather Condition</div>
+            <div>
+              <span>temp</span>
+              <span>&deg;C</span>
+            </div>
           </div>
         </div>
-        <div class="card-details">
-          <h2>City Name</h2>
-          <div>Weather Condition</div>
-          <div>
-            <span>temp</span>
-            <span>&deg;C</span>
+        <!-- Input weather Container  -->
+        <div class="input-container">
+          <div class="titles">
+            <p class="sub-title">Weather or Not</p>
+            <h1 class="title">Weather App</h1>
           </div>
+          <!-- Form -->
+          <form class="change-location">
+            <!-- <label for="city">Explore the weather in</label> -->
+            <br />
+            <input
+              id="city"
+              type="text"
+              name="city"
+              class="form-input"
+              placeholder="Giggleswick"
+            />
+          </form>
         </div>
       </div>
     </main>

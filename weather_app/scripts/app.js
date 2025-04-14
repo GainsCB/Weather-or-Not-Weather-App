@@ -1,22 +1,39 @@
 const cityForm = document.querySelector("form");
 const cardEl = document.querySelector(".card");
 const detailsEl = document.querySelector(".card-details");
+const time = document.querySelector("img.time");
+const icon = document.querySelector(".icon img");
 
 const updateUI = (data) => {
+  console.log(data);
+
   const cityDetails = data.cityDetails;
   const weather = data.weather;
 
   //   update details tempate
   detailsEl.innerHTML = `
-         <h2>${cityDetails.EnglishName}</h2>
-          <div>${weather.WeatherText}</div>
+         <h3>${cityDetails.EnglishName}</h3>
+          <div class="sub-title">${weather.WeatherText}</div>
           <div>
             <span>${weather.Temperature.Metric.Value}</span>
             <span>&deg;C</span>
           </div>
 `;
 
+  //  update the night/day & icon images
 
+  const iconSrc = `imgs/icons/${weather.WeatherIcon}.svg`;
+  icon.setAttribute("src", iconSrc);
+
+  let timeSrc = null;
+
+  if (weather.IsDayTime) {
+    timeSrc = "imgs/pictures/day.svg";
+  } else {
+    timeSrc = "imgs/pictures/night.svg";
+  }
+
+  time.setAttribute("src", timeSrc);
 };
 
 const updateCity = async (city) => {

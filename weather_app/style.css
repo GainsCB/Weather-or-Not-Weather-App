@@ -1,52 +1,176 @@
+/* Custom Properties */
+
 :root {
-  /* Font */
-  --ff-main: "Poppins", sans-serif;
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Fraunces", serif;
 
-  /* Colors */
-  --clr-dark: #0e1c27;
-  --clr-light: #f5fafd;
-  --clr-primary: #348ad1;
-  --clr-secondary: #af98ce;
-  --clr-accent: #f2c1b0;
+  --fw-regular: 500;
+  --fw-bold: 700;
 
-  /* Box Shadow */
+  --clr-accent: hsl(15, 72%, 82%);
+  --clr-neutral-900: hsl(212, 21%, 14%);
+  --clr-neutral-400: hsl(225, 8%, 30%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
   --bs: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+/* joshwcomeau - Reset - https://www.joshwcomeau.com/css/custom-css-reset/  */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+h6 {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  }
+}
+
 body {
-  background-color: var(--clr-light);
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+
+/* general styling */
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
   color: var(--clr-dark);
-  font-family: var(--ff-main);
+  font-size: 0.875rem;
+  background-color: var(--clr-neutral-400);
+  display: grid;
+  place-content: center;
+  margin: 10rem;
 }
 
-main {
-  border: 1px green solid;
-  max-width: 500px;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.city-input {
-    border: 0.5px solid var(--clr-accent);
-    height: 45px;
-    min-width: 400px;
-}
-
-/* Weather Card */
-
-.card-container {
-  border: 1px yellow solid;
+.container {
+  background-color: var(--clr-neutral-100);
+  display: flex;
+  /* gap: 0.5rem; */
+  flex-wrap: wrap;
+  border-radius: 1rem;
   box-shadow: var(--bs);
-  margin: 25px auto;
-  max-width: 400px;
+  min-width: 850px;
 }
 
-.card-img {
-  border: 1px red solid;
+/* Results Container */
+
+.results-container {
+  background-color: var(--clr-accent);
+  color: var(--clr-neutral-100);
 }
 
 .card-details {
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+span {
+  font-size: 3rem;
+}
+
+.icon {
+  background-color: var(--clr-neutral-100);
+  position: relative;
+  top: -50px;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 25%;
+  margin-bottom: -50px;
+}
+
+/* Input Container */
+
+.input-container {
+  padding: 5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.titles {
+  margin: 5rem 0;
+}
+
+input {
+  outline: 0.5px solid var(--clr-neutral-900);
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-400);
+  font-size: 1rem;
+}
+
+.title {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-family: var(--ff-secondary);
+  color: var(--clr-neutral-900);
+}
+
+.sub-title {
+  letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--clr-secondary);
-  border: 1px purple solid;
+  color: var(--clr-neutral-400);
 }
